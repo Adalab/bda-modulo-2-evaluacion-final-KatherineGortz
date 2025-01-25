@@ -80,10 +80,10 @@ WHERE title = "Indian Love";
 -- 14. Muestra el título de todas las películas que contengan la palabra "dog" o "cat" en su descripción. 
 SELECT title, description
 FROM film
-WHERE description LIKE '%dog%' OR description REGEXP '%cat%';
+WHERE description LIKE '%dog%' OR description LIKE '%cat%';
 
 -- 15. Hay algún actor o actriz que no aparezca en ninguna película en la tabla film_actor?
-SELECT a.last_name, a.first_name
+SELECT a.last_name, a.first_name, fa.film_id
 FROM actor a
 LEFT JOIN film_actor fa ON a.actor_id = fa.actor_id
 WHERE fa.film_id IS NULL;
@@ -165,4 +165,4 @@ SELECT f.title, f.length, c.name
 FROM film f 
 INNER JOIN film_category fc ON fc.film_id = f.film_id
 INNER JOIN category c ON c.category_id = fc.category_id
-WHERE length > 180 AND c.name = 'Comedy';
+WHERE f.length > 180 AND c.name = 'Comedy';
