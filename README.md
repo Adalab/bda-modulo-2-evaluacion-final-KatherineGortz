@@ -6,7 +6,8 @@ Para la evaluación final de Módulo 2: SQL, he seguido los siguientes pasos:
 - Revisión del anunciado para apuntar dudas a alcarar en el soporte técnico el 24 de enero (8:30-14:00h)
 - Realización de las consultas dentro de la base de datos, Sakila, que se instaló al príncipio del Módulo 2
 - Conversar con Yanelis para resolver dudas
-- Creación del repo, entrega del fichero SQL ya completado
+- Creación del repo, push del primer borrador
+- Push del fichero SQL ya completado trás una última revisión
 
 Anotaciones sobre aspectos técnicos de las consultas: 
 1. Dentro de la tabla film
