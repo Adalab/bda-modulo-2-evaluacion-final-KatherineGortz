@@ -94,11 +94,12 @@ FROM film
 WHERE release_year BETWEEN 2005 AND 2010;
 
 -- 17. Encuentra el título de todas las películas que son de la misma categoría que "Family".
-SELECT f.title, c.name
+SELECT COUNT(f.title), c.name
 FROM film f
 INNER JOIN film_category fc ON f.film_id = fc.film_id
 INNER JOIN category c ON fc.category_id = c.category_id
-WHERE c.name = "Family";
+WHERE c.name = "Family"
+GROUP BY c.name;
 
 -- 18. Muestra el nombre y apellido de los actores que aparecen en más de 10 películas.
 SELECT a.first_name as Nombre, a.last_name as Apellido, COUNT(fa.film_id) as NumPelis
@@ -166,3 +167,18 @@ FROM film f
 INNER JOIN film_category fc ON fc.film_id = f.film_id
 INNER JOIN category c ON c.category_id = fc.category_id
 WHERE f.length > 180 AND c.name = 'Comedy';
+
+INSERT INTO actor (first_name, last_name, last_update)
+VALUES ('Katie', 'Gortz', '2025-01-17 04:34:33');
+
+SELECT *
+FROM actor
+WHERE first_name ='Katie';
+
+UPDATE actor
+SET first_name = 'Yanelis'
+WHERE actor_id = 201;
+
+SELECT *
+FROM actor
+WHERE actor_id = 201;
